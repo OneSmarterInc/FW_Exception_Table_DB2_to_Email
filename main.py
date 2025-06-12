@@ -109,7 +109,7 @@ if __name__ == "__main__":
         df1 = df1[["ID", "FundLib", "SSN", "Name", "Health Elg Status", "Eligibility Date"]]
         html1 = build_email_body(df1.to_html(index=False, classes="data-table", border=0))
         receivers1 = ["gearbold@gmail.com"]
-        subject1 = "FW: Exception Alert - HCID/Highmark ID Blank Cases"
+        subject1 = "Exception Alert - HCID/Highmark ID Blank Cases"
         for email in receivers1:
             send_email_via_api(email.strip(), subject1, html1)
 
@@ -118,7 +118,7 @@ if __name__ == "__main__":
         df2 = df2.rename(columns={"FUNDLIB": "FundLib", "EMSSN": "SSN", "EMNAME": "Name", "XHCID": "HCID"})
         html2 = build_email_body(df2.to_html(index=False, classes="data-table", border=0))
         receivers2 = ["prajvalghusalikar@gmail.com"]
-        subject2 = "FW: Exception Alert - HCID Duplicate"
+        subject2 = "Exception Alert - HCID Duplicate"
         for email in receivers2:
             send_email_via_api(email.strip(), subject2, html2)
 
